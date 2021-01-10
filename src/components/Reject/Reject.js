@@ -46,7 +46,7 @@ export default function Reject() {
         justify="flex-start"
         alignItems="flex-start"
       >
-        {users.map((user, index) => {
+        {users ?users.map((user, index) => {
           return (
             <Grid item xs={12} sm={6} md={3} key={index}>
               <Card className={classes.card}>
@@ -68,7 +68,9 @@ export default function Reject() {
               </Card>
             </Grid>
           );
-        })}
+        }):<Typography className={classes.title} component="h2" variant="h4">
+        No Candidates Added Yet!
+      </Typography>}
       </Grid>
     </div>
   );
